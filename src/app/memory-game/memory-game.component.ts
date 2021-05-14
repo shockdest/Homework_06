@@ -55,13 +55,16 @@ export class MemoryGameComponent implements OnInit {
       // console.log(this.cardNumberSelectArray);
   }
 
-  fillcards(){
-
-  }
-
   getRandomArbitrary(min, max, iteration) {
     return Math.floor(Math.random() * (max - min) + min);
   }
+
+  getSelectValue(){
+    localStorage.setItem("SelectValue", this.optionValue.nativeElement.value);
+    this.isGame =true;
+    //console.log(this.optionValue.nativeElement.value);
+  }
+
 
  /*  getRandomIndexes(){ //for 
     this.getRandomArbitrary(3, 10, localStorage.getItem("SelectedValue")) // kell még egy tempArray - ahova mennek a random számok.
@@ -79,6 +82,7 @@ export class MemoryGameComponent implements OnInit {
       this.randomList.push(newElements);
       this.itemlist.push(this.defaultCards[newElements]);
       this.itemlist.push(this.defaultCards[newElements]);
+      this.itemlist.sort(() => Math.random() - 0.5);
       
     }
     console.log(this.randomList);
@@ -87,14 +91,13 @@ export class MemoryGameComponent implements OnInit {
     
   }
 
+  startButton(){
+    this.getSelectValue();
+    this.createCardDeck();
+  }
+
   cardNumberSelectArray = [];
   @ViewChild("optionValue") optionValue:ElementRef;
- 
 
-  getSelectValue(){
-    localStorage.setItem("SelectValue", this.optionValue.nativeElement.value);
-    this.isGame =true;
-    //console.log(this.optionValue.nativeElement.value);
-  }
 
 }
