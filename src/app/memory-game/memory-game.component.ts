@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-memory-game',
@@ -49,8 +49,10 @@ export class MemoryGameComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-    //feliratkozom egy obs. fgvre
+    for(let i = 3;i<=10;i++){
+      this.cardNumberSelectArray.push(i);
+      }
+      // console.log(this.cardNumberSelectArray);
   }
 
   fillcards(){
@@ -83,6 +85,16 @@ export class MemoryGameComponent implements OnInit {
     console.log(this.itemlist);
     this.isGame =true;
     
+  }
+
+  cardNumberSelectArray = [];
+  @ViewChild("optionValue") optionValue:ElementRef;
+ 
+
+  getSelectValue(){
+    localStorage.setItem("SelectValue", this.optionValue.nativeElement.value);
+    this.isGame =true;
+    //console.log(this.optionValue.nativeElement.value);
   }
 
 }

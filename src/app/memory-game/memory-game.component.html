@@ -1,4 +1,17 @@
-    <div class="game-info-container">
+   <div *ngIf="!isGame">
+    <p>Deck Size</p>
+
+    <div class="menu-item">
+        <select #optionValue>
+            <option *ngFor="let item of cardNumberSelectArray">{{ item }}</option>
+        </select>
+    </div>
+    <div class="menu-item">
+        <button type="button" class="btn btn-danger" (click)="createCardDeck()" (click)="getSelectValue()">Start New Game</button>
+    </div>
+</div>
+
+   <div  *ngIf="isGame" class="game-info-container">
         <div class="game-info">
             Current tries: <span id="current-tries">0</span>
         </div>
@@ -18,5 +31,4 @@
                 <img [src]=(item.img)>
             </div>
         </div>
-        <div (click)="createCardDeck()" class="card"></div>
     </div>
