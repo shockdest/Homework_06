@@ -1,4 +1,4 @@
-   <div *ngIf="!isGame">
+<div *ngIf="!isGame">
     <p>Deck Size</p>
 
     <div class="menu-item">
@@ -11,24 +11,24 @@
     </div>
 </div>
 
-   <div  *ngIf="isGame" class="game-info-container">
-        <div class="game-info">
-            Current tries: <span id="current-tries">0</span>
+<div *ngIf="isGame" class="game-info-container">
+    <div class="game-info">
+        Current tries: <span id="current-tries">0</span>
+    </div>
+    <div class="game-best">
+        Best: <span id="current-best">0</span>
+    </div>
+    <div class="restart-button">
+        <button class="btn primary-btn">Restart</button>
+    </div>
+</div>
+<div class="game-container">
+    <div *ngFor="let item of itemlist" (click)="(item.type)" class="card">
+        <div class="card-back card-face">
+
         </div>
-        <div class="game-best">
-            Best: <span id="current-best">0</span>
-        </div>
-        <div class="restart-button">
-            <button class="btn primary-btn">Restart</button>
+        <div class="card-front card-face">
+            <img style="height:130px;width:130px;" [src]=(item.img)>
         </div>
     </div>
-    <div class="game-container">
-        <div *ngFor="let item of itemlist" class="card">
-            <div class="card-back card-face">
-                
-            </div>
-            <div class="card-front card-face">
-                <img [src]=(item.img)>
-            </div>
-        </div>
-    </div>
+</div>
