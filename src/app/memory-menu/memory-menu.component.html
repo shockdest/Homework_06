@@ -1,0 +1,13 @@
+<div *ngIf="!isGame">
+    <p>Deck Size</p>
+
+    <div class="menu-item">
+        <select #optionValue>
+            <option *ngFor="let item of cardNumberSelectArray">{{ item }}</option>
+        </select>
+    </div>
+    <div class="menu-item">
+        <button type="button" class="btn btn-danger" (click)="getSelectValue()">Start New Game</button>
+    </div>
+</div>
+<app-memory-game *ngIf="isGame"></app-memory-game>

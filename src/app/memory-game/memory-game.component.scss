@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.game-info-container{
+    width:50%;
+    margin-left:25%;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between;
+
+    grid-column: 1 / -1;
+}
+
+.card{
+    width:150px;
+    height: 150px;
+    border-radius: 10px;;
+    background-color: white;
+    border-color:rgb(105, 105, 105);
+    box-shadow: 0.5px 3px;
+}
+
+.game-container{
+    width:50%;
+    margin-left:25%;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    perspective: 500px;
+}
+button{
+    text-align: center;
+    background-color: rgb(255, 255, 255);  
+    border:1px solid black;
+    font-size:15px;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    padding:13px;
+    text-transform: uppercase;
+}
+
+.img{
+    height:100px;
+    width:100px;
+}
+
+.card-face{
+    position: absolute;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: transform 500ms ease-in-out;
+}
+
+.card.visible .card-back{
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front{
+    transform: rotateX(0);
+}
+
+.card-front{
+    transform: rotateY(180deg);
+}
+
+
+@media (max-width: 600px) {
+    .game-container{
+        grid-template-columns: repeat(2, auto);
+    }
+    
+    .game-info-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}

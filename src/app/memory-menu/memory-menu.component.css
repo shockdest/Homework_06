@@ -1,0 +1,46 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  text-align: center;
+  font-size: 15px;
+}
+
+.menu-item {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 35%;
+}
+
+select {
+  background-color: white;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+  border: 1px solid #d6d6d6;
+}
+
+button {
+  text-align: center;
+  padding: 5px;
+  background-color: #fd3737;
+  border: 0;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=memory-menu.component.css.map */

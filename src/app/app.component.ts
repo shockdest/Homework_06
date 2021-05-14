@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'homework-memory';
+  title = 'Splendex Memory Game';
+  headerImagePath = '../assets/splendex-logo.svg';
 }

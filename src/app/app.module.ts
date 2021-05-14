@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MemoryMenuComponent } from './memory-menu/memory-menu.component';
+import { MemoryGameComponent } from './memory-game/memory-game.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MemoryMenuComponent,
+    MemoryGameComponent
   ],
   imports: [
     BrowserModule,
@@ -16,3 +22,5 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
